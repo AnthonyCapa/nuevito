@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Cursos y Estudiantes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        .listado {
+            list-style: none;
+            padding: 0;
+        }
+
+        .item {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Listado de Cursos y Estudiantes</h1>
+    </header>
+    
+    <div class="container">
+        <div class="cursos">
+            <h2>Cursos</h2>
+            <ul class="listado">
+                {% for curso in cursos %}
+                <li class="item">
+                    <strong>ID del Curso:</strong> {{ curso.Id }}<br>
+                    <strong>Nombre del Curso:</strong> {{ curso.Nombre_Curso }}<br>
+                    <strong>ID del Estudiante:</strong> {{ curso.Id_Estudiante }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="estudiantes">
+            <h2>Estudiantes</h2>
+            <ul class="listado">
+                {% for estudiante in estudiantes %}
+                <li class="item">
+                    <strong>ID del Estudiante:</strong> {{ estudiante.Id_Estudiante }}<br>
+                    <strong>Nombre:</strong> {{ estudiante.Nombre }}<br>
+                    <strong>Apellido:</strong> {{ estudiante.Apellido }}<br>
+                    <strong>Edad:</strong> {{ estudiante.Edad }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
